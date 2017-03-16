@@ -1,0 +1,95 @@
+<!doctype html>
+<html>
+<head>
+    <title>Node Authentication</title>
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css"> <!-- load bootstrap css -->
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"> <!-- load fontawesome -->
+    <style>
+        body        { padding-top:80px; }
+    </style>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js" integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8=" crossorigin="anonymous"></script>
+    <script   src="http://code.jquery.com/ui/1.12.1/jquery-ui.min.js"   integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU="   crossorigin="anonymous"></script>
+</head>
+<body>
+<div class="container">
+
+<div class="col-sm-6 col-sm-offset-3">
+
+    <h1><span class="fa fa-bed"></span> Add a New Room</h1>
+
+    <!-- ROOM ADD FORM -->
+    <form>
+      <div class="form-group">
+        <div class="row">
+          <div class="col-md-2">
+            <label class="sr-only" for="rmnum">Room Number</label>
+            <input class="form-control" type="text" name="rmnum" size="4" maxlength="4" placeholder="No.">
+          </div>
+          <div class="col-md-10">
+            <label class="sr-only" for="rmtype">Room Type:</label>
+            <select class="form-control" name="rmtype">
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="row">
+          <div class="col-md-6">
+            <label class="sr-only" for="beds">Beds</label>
+            <select class="form-control" name="beds">
+              <option value="1D">1 Double</option>
+              <option value="2D">2 Doubles</option>
+              <option value="1Q">1 Queen</option>
+              <option value="2Q">2 Queens</option>
+              <option value="1K">1 King</option>
+              <option value="2K">2 Kings</option>
+            </select>
+          </div>
+          <div class="col-md-6">
+            <label for="ssofa">Sleeper Sofa</label>
+            <input type="radio" name="ssofa" value="yes">Yes
+            <input type="radio" name="ssofa" value="no">No
+          </div>
+        </div>
+      </div>
+        <div class="form-group">
+          <div class="row">
+            <div class="col-md-6">
+              <label for="oda">Outdoor Access</label>
+              <select class="form-control" name="oda">
+                <option value="deck">Deck</option>
+                <option value="patio">Patio</option>
+                <option value="balcony">Balcony</option>
+                <option value="na">N/A</option>
+              </select>
+            </div>
+            <div class="col-md-6">
+              <label for="smoking">Smoking</label>
+              <input type="radio" name="smoking" value="yes">Smoking
+              <input type="radio" name="smoking" value="no">Non-Smoking
+            </div>
+          </div>
+        </div>
+        <div class="form-group">
+          <div class="row">
+            <div class="col-md-6">
+              <label for="pets">Pet Friendly</label>
+              <input type="radio" name="pets" value="yes">Yes
+              <input type="radio" name="pets" value="no">No
+            </div>
+            <div class="col-md-6">
+              <label for="handicap">Handicap Accessible</label>
+              <input type="radio" name="handicap" value="yes">Yes
+              <input type="radio" name="handicap" value="no">No
+            </div>
+          </div>
+        </div>
+    </form>
+</div>
+
+</div>
+</body>
+</html>
