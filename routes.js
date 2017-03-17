@@ -13,30 +13,12 @@ module.exports = function(app, passport) {
   		res.render('pages/signup', { message: req.flash('signupMessage') });
 	});
 
-	app.post('/signup', function (req, res, next) {
-    passport.authenticate('local', {failureRedirect: '/login'},
-        function (req, email, password, done) {
-            process.nextTick(function () {
-                User.findOne({'local.email': email}, function (err, user) {
-                    if (err)
-                        return done(err);
-                    if (user) {
-                        return done(null, false, req.flash('signupMessage', 'That e-mail address is already taken.'));
-                    } else {
-                        var newUser = new User;
-                        newUser.local.email = email;
-                        newUser.local.password = newUser.generateHash(password);
-                        newUser.save(function (err) {
-                            if (err){
-                                throw err;}
-                            //res.redirect("/path")        
-                            return done(null, newUser);
-                        });
-                    }
-                });
-            });
-        });
-});
+	    // process the signup form
+    app.post('/signup', passport.authenticate('local-signup', {
+        successRedirect : '/profile', // redirect to the secure profile section
+        failureRedirect : '/signup', // redirect back to the signup page if there is an error
+        failureFlash : true // allow flash messages
+    }));
 
 	app.post('/login', passport.authenticate('local-login', {
 		successRedirect: '/profile',
